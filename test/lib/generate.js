@@ -140,10 +140,17 @@ describe('generate', function() {
     );
   });
 
-  it('should return the target if the output is an array', function() {
+  it('should return {} if both are arrays and they match', function() {
     assert.deepEqual(
-      generate([1, 2, 3], [1, 2, 3]),
-      [1,2,3]
+      generate([1,2,3], [1,2,3]),
+      {}
+    );
+  });
+
+  it('should return the target if the output is an array and they differ', function() {
+    assert.deepEqual(
+      generate([1, 2, 3], [1, 2, 3, 4]),
+      [1, 2, 3, 4]
     );
   });
 
