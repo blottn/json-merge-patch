@@ -68,10 +68,10 @@ describe('apply', function() {
     );
   });
 
-  it('should replace an object with an array', function() {
+  it('should merge an object with an array', function() {
     assert.deepEqual(
       apply({a: 'b'}, ['c']),
-      ['c']
+      {'0': 'c', a: 'b'}
     );
   });
 
@@ -105,7 +105,7 @@ describe('apply', function() {
 
   it('should not set an attribute to null', function() {
     assert.deepEqual(
-      apply([1, 2], {a: 'b', c: null}),
+      apply({'a': 1}, {a: 'b', c: null}),
       {a: 'b'}
     );
   });
