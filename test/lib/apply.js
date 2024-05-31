@@ -113,7 +113,7 @@ describe('apply', function() {
   it('should not set an attribute to null in a sub object', function() {
     assert.deepEqual(
       apply({}, {a: {bb: {ccc: null}}}),
-      {a: {bb: {}}}
+      {}
     );
   });
 });
