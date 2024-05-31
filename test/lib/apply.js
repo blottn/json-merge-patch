@@ -116,4 +116,19 @@ describe('apply', function() {
       {}
     );
   });
+
+  it('should replace an array item', function() {
+    assert.deepEqual(
+      apply([], ['abc']),
+        ['abc']
+      );
+  });
+  it('should append an array item', function() {
+    assert.deepEqual(
+      apply(['foo'], ['foo', 'bar']),
+        ['foo', 'bar']
+      );
+  });
+
+
 });
